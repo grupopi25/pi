@@ -1,0 +1,128 @@
+
+
+.form-wrapper {
+    max-width: 700px;
+    background-color: #fff;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1167BC;
+    font-weight: 700;
+}
+
+.logged-user {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.error-box {
+    padding: 12px 20px;
+    background-color: #e63946;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.error-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.pet-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label,
+.input-nomes {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.input-nome,
+.input-text,
+.input-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-nome:focus,
+.input-text:focus,
+.input-select:focus {
+    border-color: #1167BC;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(17, 103, 188, 0.2);
+}
+
+/* Botões ocupam as duas colunas */
+.btn-submit,
+.btn-cancel {
+    grid-column: span 2;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-submit {
+    border: none;
+    background-color: #1167BC;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #0d4f91;
+}
+
+.btn-cancel {
+    background-color: #bdc3c7;
+    color: white;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn-cancel:hover {
+    background-color: #a0a7ad;
+}
+
+@media (max-width: 768px) {
+    .form-wrapper {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .pet-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-submit,
+    .btn-cancel {
+        grid-column: unset;
+        width: 100%;
+        margin-top: 8px;
+    }
+}

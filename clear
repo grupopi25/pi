@@ -1,0 +1,113 @@
+[33mcommit c19f3131e87e053701ac6f5b9d064b00ff8966fe[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manderson[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Mon May 26 01:11:35 2025 -0300
+
+    criado o cadastro de pet com toda  função Crud. esta faltando as views da tela do cliente
+
+[33mcommit fbc063dc2067d71d6c7705a945df76c9c70037dd[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 23:49:00 2025 -0300
+
+    trocando o nome layout.home para admin para melhor compreenção
+
+[33mcommit 0319602d862e95bbaceb7f3f13f6749f574c32b5[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 23:40:38 2025 -0300
+
+    acrescentando o telefone de usuario e cliente no banco de dados
+
+[33mcommit 9199b56c283ff3b75d33e30eff74247ab8faeb5b[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 23:22:56 2025 -0300
+
+    corrigindo erros no meu js
+
+[33mcommit f6a6a2a45c91033c4cc8c7c6990c4295d0932ad8[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 23:13:38 2025 -0300
+
+    troque a dashboard princial do meu adm agora ficou muito melhor
+
+[33mcommit a9d3151035dba8dc96ff4b26df83b5666bd3c45f[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 02:39:25 2025 -0300
+
+    adicionando o total de  usuarios cadastrados dentro da minha home
+
+[33mcommit 675f60ffc5a41bb8a95069cd6615d21b1e297dcd[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 02:28:48 2025 -0300
+
+    adicionando o cliente no cadastro e corrigindo bugs também fiz a junção do usuarios mais o cliente
+
+[33mcommit f7e629091fb6c4d96a3945ce30505fcbf3111868[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Sun May 25 01:02:46 2025 -0300
+
+    adicionado a tela de adm com as suas telas de controles
+
+[33mcommit 12f494f9538d333158b400f442445849fce1a2e2[m
+Author: JoseCandeia <josecandeia021a2@gmail.com>
+Date:   Wed May 21 21:28:16 2025 -0300
+
+    HOME OK
+
+[33mcommit e9422d3e755dfdf4a87cf67a5e8899550f452619[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Mon May 19 02:24:41 2025 -0300
+
+    criei as rota e controller de logout falta deixar funcional
+
+[33mcommit 78a309cafea089f9b014eb7022d5e3bee4ed4b6d[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Mon May 19 02:15:08 2025 -0300
+
+    adicionado o back-end de login. login funcionando perfeitamente.
+
+[33mcommit f557d0f352d2e7df4c48f512ce4e8074173052f8[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Mon May 19 01:38:36 2025 -0300
+
+    adicionado o back-end de cadastro. o cadastro ja está funcional no banco de dados e na validação
+
+[33mcommit a6a91456c3e3fca1d8d3409e0c1f8ac667c746ed[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Mon May 19 00:38:52 2025 -0300
+
+    fazendo o back-end da pagina de cadastro
+
+[33mcommit e39b40b81f280ba5492fe67bdd59e45f1db41ebf[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Sun May 18 23:59:23 2025 -0300
+
+    colocando a pata do pet como img
+
+[33mcommit a695841966a71bf9bfb871cd1aeb6b58f4aed245[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Sun May 18 23:51:13 2025 -0300
+
+    telas de login e cadastro finalizadas
+
+[33mcommit e31ff9ae2b1ab3bd3820362d2da3e6edbc22b7ab[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Sun May 18 23:40:28 2025 -0300
+
+    adicionado mais duas telas a de login e a de cadastro  (cadastro ainda falta terminar)
+
+[33mcommit 5dcd341794d43be6a3d5e1805026b0da20eb51bf[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Sun May 18 21:50:54 2025 -0300
+
+    arrumando erro de rota na pasta cadastro de usuarios
+
+[33mcommit 38c88894c790f02bd9d8288f45400a76b445209b[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Sun May 18 21:47:30 2025 -0300
+
+    modificando as pastas deixando elas organizadas
+
+[33mcommit 163f6ec39d3067511858b857373554a3ff1b0d40[m
+Author: grupopi25 <grupopiii27@gmail.com>
+Date:   Thu May 15 22:59:57 2025 -0300
+
+    adicionando projeto pi
