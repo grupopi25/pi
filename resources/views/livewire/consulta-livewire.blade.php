@@ -29,10 +29,10 @@
             <label for="tipo_pet" class="input-label">Espécie</label>
             <select name="tipo_pet" class="input-select" required>
                 <option value="">Selecione a espécie</option>
-                <option value="cachorro">Cachorro</option>
-                <option value="gato">Gato</option>
-                <option value="coelho">Coelho</option>
-                <option value="outro">Outro</option>
+                @foreach ($pets as $pet )
+                <option value="{{ $pet->id }}">{{ $pet->breed }}</option>
+
+                @endforeach
             </select>
         </div>
 
