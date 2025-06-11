@@ -12,10 +12,10 @@ return new class extends Migration {
 
             // Dados do Pet
             $table->string('name');
-            $table->string('species'); // Ex: cão, gato, etc.
+            $table->string('species');
             $table->string('breed')->nullable();
             $table->string('color')->nullable();
-            $table->string('gender')->nullable(); // macho/fêmea
+            $table->string('gender')->nullable(); 
             $table->date('birth_date')->nullable();
             $table->float('weight')->nullable();
 

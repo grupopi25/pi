@@ -48,8 +48,28 @@
 
         <div class="input-grupo">
             <label for="motivo" class="input-label">Motivo da Consulta</label>
-            <textarea name="motivo" rows="4" class="input-text" placeholder="Descreva o motivo da consulta..." required></textarea>
+          <select name="motivo" class="input-select" required>
+              <option value="">Selecione o motivo</option>
+              <option value="checkup">Check-up</option>
+              <option value="vacina">Vacinação</option>
+              <option value="consulta">Consulta</option>
+                <option value="emergencia">Emergência</option>
+                <option value="banho">Banho</option>
+                <option value="tosa">Tosa</option>
+                <option value="outro">Outro</option>
+          </select>
+
         </div>
+        <div class="input-grupo">
+            <label for="observacoes" class="input-label">Observações</label>
+            <textarea name="observacoes" rows="4" class="input-text" placeholder="Descreva qualquer observação adicional..." required></textarea>
+        </div>
+        <div class="input-grupo">
+            <label for="telefone" class="input-label">Telefone</label>
+            <input type="tel" name="telefone" class="input-text" value="{{ auth()->user()->telefone }}" disabled>
+        </div>
+        <div><h3>Preço R$ <span id="preco">0.00</span></h3></div>
+
 
         <button type="submit" class="btn-submit">Agendar</button>
         <a href="#" class="btn-cancel">Cancelar</a>
