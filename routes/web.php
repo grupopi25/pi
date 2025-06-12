@@ -33,8 +33,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/mensage',[AdiminController::class,'mensage'])->name('adm.mensage');
     Route::get('/doctors',[AdiminController::class,'doctors'])->name('adm.doctors');
     Route::get('/finance',[AdiminController::class,'finance'])->name('adm.finance');
-    
- 
+
+
     Route::get('/admin/pets', [AdiminController::class, 'pets'])->name('adm.pets');
     Route::get('/pets/create', [AdiminController::class, 'createPet'])->name('adm.pets.create');
     Route::post('/pets', [AdiminController::class, 'storePet'])->name('adm.pets.store');
@@ -53,6 +53,11 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/pets/{pet}', [PetController::class, 'destroy'])->name('pets.destroy');
 
 });
+
+// para consultas
+
+
+
 
 
 

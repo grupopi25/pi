@@ -6,7 +6,7 @@
 
     </div>
 
-    <form action="#" method="POST" class="pet-form">
+    <form wire:submit.prevent="storeConsulta" method="POST" class="pet-form">
         <div class="input-grupo">
             <label for="nome_tutor" class="input-label">Nome do Tutor</label>
             <input type="text" name="nome_tutor" class="input-text" value="{{ auth()->user()->name }}" disabled>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="input-grupo">
-            <label for="tipo_pet" class="input-label">Espécie</label>
-            <select name="tipo_pet" class="input-select" required>
+            <label for="pet_id" class="input-label">Espécie</label>
+            <select wire:model="pet_id" class="input-select" required>
                 <option value="">Selecione a espécie</option>
                 @foreach ($pets as $pet )
                 <option value="{{ $pet->id }}">{{ $pet->breed }}</option>
@@ -38,17 +38,17 @@
 
         <div class="input-grupo">
             <label for="data" class="input-label">Data da Consulta</label>
-            <input type="date" name="data" class="input-text" required>
+            <input type="date" wire:model="data" class="input-text" required>
         </div>
 
         <div class="input-grupo">
             <label for="hora" class="input-label">Hora da Consulta</label>
-            <input type="time" name="hora" class="input-text" required>
+            <input type="time" wire:model="hora" class="input-text" required>
         </div>
 
         <div class="input-grupo">
             <label for="motivo" class="input-label">Motivo da Consulta</label>
-          <select name="motivo" class="input-select" required>
+          <select wire:model="motivo" class="input-select" required>
               <option value="">Selecione o motivo</option>
               <option value="checkup">Check-up</option>
               <option value="vacina">Vacinação</option>
@@ -62,7 +62,7 @@
         </div>
         <div class="input-grupo">
             <label for="observacoes" class="input-label">Observações</label>
-            <textarea name="observacoes" rows="4" class="input-text" placeholder="Descreva qualquer observação adicional..." required></textarea>
+            <textarea wire:model="observacoes" rows="4" class="input-text" placeholder="Descreva qualquer observação adicional..." required></textarea>
         </div>
         <div class="input-grupo">
             <label for="telefone" class="input-label">Telefone</label>
