@@ -3,37 +3,31 @@
 
     <div class="message-box">
         <section class="message-list">
+
+            @foreach($mensagens as $mensagem)
+                <div class="message">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>
+                                {{ $mensagem->remetente === 'adm' ? 'Clínica' : 'Você' }}
+                            </strong>
+                        </li>
+                    </ul>
+                    <p>{{ $mensagem->conteudo }}</p>
+                </div>
+            @endforeach
+
+
             <div class="message">
                 <ul class="list-group">
-                    <li class="list-group-item"><strong>Clínica</strong></li>
+                    <li class="list-group-item"><strong>Você</strong></li>
                 </ul>
-                <p>Olá, seu atendimento foi agendado com sucesso.</p>
-                <form action="" class="form-list">
-                    <input type="text" placeholder="Digite sua mensagem" wire:model="message">
-                    <button type="submit" wire:click.prevent="sendMessage">Enviar</button>
+                <form wire:submit.prevent="enviarMensagemCliente" class="form-list">
+                    <input type="text" wire:model="novaMensagem" placeholder="Digite sua mensagem" required>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
 
-            <div class="message">
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>Cliente</strong></li>
-                </ul>
-                <p>Bom dia! Gostaria de confirmar se meu pet precisa jejum antes do exame.</p>
-            </div>
-
-            <div class="message">
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>Clínica</strong></li>
-                </ul>
-                <p>Sim! Para exames de sangue, jejum de 8 horas é recomendado.</p>
-            </div>
-
-            <div class="message">
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>Cliente</strong></li>
-                </ul>
-                <p>Perfeito, muito obrigado pela orientação!</p>
-            </div>
         </section>
     </div>
 </div>

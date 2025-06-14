@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     @vite(['resources/css/admin/adm.css', 'resources/js/script.js'])
     @vite(['resources/css/admin/clientes.css', 'resources/js/script.js'])
+    @vite(['resources/css/admin/mensagens.css'])
     @vite([ 'resources/js/animais.js'])
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />

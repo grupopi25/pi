@@ -9,4 +9,5 @@ class MessageController extends Controller
     public function mensagens(){
         return view('site.clientes.mensagens');
     }
+
 }
