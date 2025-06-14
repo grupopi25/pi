@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Pet;
 use App\Models\Cliente;
+use App\Models\Adm;
 
 class User extends Authenticatable
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable
         'password',
         'telefone',
         'cliente_id',
+        'adm_id',
     ];
 
     protected $hidden = [
@@ -25,13 +27,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
 
     public function cliente()
     {
@@ -42,4 +41,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pet::class, 'user_id');
     }
+
+    public function adm()
+    {
+        return $this->belongsTo(Adm::class, 'adm_id');
+    }
+
+ 
 }

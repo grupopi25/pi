@@ -10,18 +10,20 @@ return new class extends Migration {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
 
-            // FK cliente_id nullable, se cliente deletar, seta null
-            $table->foreignId('cliente_id')->nullable()->constrained('clientes')->onDelete('set null');
+
+            $table->foreignId('cliente_id')->nullable()->constrained('clientes')->onDelete('cascade');
+            $table->foreignId('adm_id')->nullable()->constrained('adm')->onDelete('cascade');
 
             $table->string('name');
             $table->string('telefone');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            
+
             $table->rememberToken();
             $table->timestamps();
-            $table->foreignId('client_id')->nullable()->constrained('clientes')->onDelete('set null');
+
+
 
         });
     }

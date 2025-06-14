@@ -8,7 +8,7 @@
     @vite(['resources/css/admin/adm.css', 'resources/js/script.js'])
     @vite(['resources/css/admin/clientes.css', 'resources/js/script.js'])
     @vite([ 'resources/js/animais.js'])
-   
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 
 
@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     {{-- NavBar --}}
     <div class="container">
         <aside>
@@ -82,19 +83,19 @@
                     <h3>Configurações</h3>
                 </a>
 
-                <a href="">
+                <a href="{{ route('logout') }}">
                     <span class="material-icons-sharp">logout</span>
                     <h3>Logout</h3>
                 </a>
             </div>
         </aside>
-        
+
 
         @yield('content')
 
     </div>
 
-    
+
 </body>
 
 </html>

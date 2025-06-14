@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adm;
 use App\Models\cliente;
 use App\Models\Pet;
 use Illuminate\Http\Request;
@@ -9,6 +10,35 @@ use Illuminate\Support\Facades\Auth;
 
 class AdiminController extends Controller
 {
+    public function cadastroAdm(){
+        return view('user.cadastroAdm');
+    }
+
+
+
+
+ public function storeAdm(Request $request)
+    {
+
+        if (Adm::where('email', $request->email)->exists()) {
+            return back()->with('error', 'Este e-mail já está cadastrado.')->withInput();
+        }
+
+        if ($request->password !== $request->password_confirmation) {
+            return back()->with('error', 'As senhas não coincidem.')->withInput();
+        }
+
+
+        $adm = new Adm();
+        $adm->name = $request->name;
+        $adm->email = $request->email;
+        $adm->password = bcrypt($request->password);
+        $adm->save();
+
+        return redirect()->route('login')->with('success', 'Administrador cadastrado com sucesso!');
+    }
+
+
    public function dashboard()
    {
       $totalClientes = Cliente::count();
@@ -21,7 +51,7 @@ class AdiminController extends Controller
         return view('site.admin.pets', compact('pets'));
     }
 
-    // Formulário de cadastro de Pet
+
     public function createPet()
     {
         $clientes = Cliente::all();

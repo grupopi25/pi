@@ -28,6 +28,8 @@ Route::post('/logout',[LoginController::class,'logout'])->name('user-logout');
 // adm
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[AdiminController::class,'dashboard'])->name('adm.dashboard');
+    Route::get('/cadastroadm',[AdiminController::class,'cadastroAdm'])->name('adm.cadastroAdm');
+    Route::post('/storeAdm',[AdiminController::class,'storeAdm'])->name('adm.storeAdm');
     Route::get('/clients',[AdiminController::class,'clients'])->name('adm.clients');
     Route::get('/pets',[AdiminController::class,'pets'])->name('adm.pets');
     Route::get('/services',[AdiminController::class,'service'])->name('adm.service');

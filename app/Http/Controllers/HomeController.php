@@ -26,5 +26,12 @@ public function consulta(){
     return view ('site.clientes.consultas');
 }
 
-
+public function logout(){
+   if(Auth::check()) {
+        Auth::logout();
+        return redirect()->route('welcome')->with('success', 'Você saiu com sucesso!');
+    } else {
+        return redirect()->route('welcome')->with('error', 'Você não está logado.');
+    }
+}
 }

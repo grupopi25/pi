@@ -14,25 +14,35 @@ class LoginController extends Controller
         return view('user.login');
     }
 
-    public function authenticate(Request $request)
-    {
+   public function authenticate(Request $request)
+{
+    $credentials = $request->validate([
+        'email'    => ['required', 'email'],
+        'password' => ['required'],
+    ]);
 
-        $credentials = $request->validate([
-            'email'    => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('home')->with('success', 'Seja Bem-Vindo!');
-        }elseif(($credentials['email'] == 'admin@eduardo.com' && $credentials['password'] == '123') ||
-               ($credentials['email'] == 'admin@anderson.com' && $credentials['password'] == '123') ||
-               ($credentials['email'] == 'admin@tarcisio.com' && $credentials['password'] == '123'))   {
-            return redirect()->route('adm.dashboard');
-        }
-        return back()->withInput()->with('error', 'Usuário não Encontrado no banco de dados!');
 
+
+
+        return redirect()->intended('home')->with('success', 'Seja Bem-Vindo!');
+    }
+    if (Auth::guard('adm')->attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->route('adm.dashboard')->with('success', 'Seja Bem-Vindo, Administrador!');
     }
 
-    public function logout() {}
+    return back()->withInput()->with('error', 'Usuário não Encontrado no banco de dados!');
+}
+
+    public function logout() {
+        if(Auth::check()) {
+            Auth::logout();
+            return redirect()->route('welcome')->with('success', 'Você saiu com sucesso!');
+        } else {
+            return redirect()->route('welcome')->with('error', 'Você não está logado.');
+        }
+    }
 }
