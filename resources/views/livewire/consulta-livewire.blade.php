@@ -2,7 +2,7 @@
    <div class="form-wrapper">
     <h1 class="form-title">Agendar Consulta</h1>
 
-    <div class="alert-success" style="display: none;">
+   <div class="alert-success" style="display: none;">
 
     </div>
 

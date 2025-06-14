@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     @vite(['resources/css/home/index.css', 'resources/js/app.js'])
+    
     @vite(['resources/css/home/dashboard.css'])
     @vite(['resources/css/home/cadastrar-pet.css'])
     @vite(['resources/css/home/sobre.css'])
+    @vite(['resources/css/home/message.css'])
 
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -48,7 +50,7 @@
                     <h3>Consultas</h3>
                 </a>
 
-                <a href="">
+                <a href="{{ route('mensagens.index') }}">
                     <span class="material-symbols-outlined">mail_outline</span>
                     <h3>Mensagens</h3>
                     <span class="message-count">5</span>

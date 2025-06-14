@@ -1,5 +1,5 @@
 @extends('site.home.index')
-
+@section('title', 'Dashboard')
 @section('content')
     <main class="main-content">
         <h1>Bem-vindo, {{ ucwords(Auth::user()->name) }}!</h1>

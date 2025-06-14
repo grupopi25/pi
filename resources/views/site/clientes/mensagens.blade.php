@@ -1,3 +1,5 @@
-<div>
-    <!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
-</div>
+@extends('site.home.index')
+@section('title', 'Mensagens')
+@section('content')
+@livewire('message-livewire')
+@endsection

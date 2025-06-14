@@ -5,6 +5,7 @@ use App\Http\Controllers\CadastroUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeUser\PetController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 // clints
@@ -54,7 +55,8 @@ Route::middleware(['auth'])->group(function() {
 
 });
 
-// para consultas
+// Mensagens
+Route::get('/mensagens', [MessageController::class, 'mensagens'])->name('mensagens.index');
 
 
 
