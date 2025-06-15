@@ -18,7 +18,7 @@ return new class extends Migration {
 
             $table->text('conteudo');
 
-        
+
             $table->enum('remetente', ['adm', 'cliente']);
 
             $table->timestamps();

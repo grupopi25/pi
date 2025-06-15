@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     @vite(['resources/css/home/index.css', 'resources/js/app.js'])
-    
+
     @vite(['resources/css/home/dashboard.css'])
     @vite(['resources/css/home/cadastrar-pet.css'])
     @vite(['resources/css/home/sobre.css'])
@@ -20,6 +20,23 @@
 </head>
 
 <body>
+@php
+use App\Models\Mensagem;
+use Illuminate\Support\Facades\Auth;
+
+$contadorMensagens = 0;
+
+if (Auth::check()) {
+    $contadorMensagens = Mensagem::where('cliente_id', Auth::id())
+        ->where('remetente', 'adm')
+        ->where('lida', false)
+        ->count();
+}
+// No seu controller da rota mensagens.index
+
+
+@endphp
+
 
     <div class="container">
         <aside>
@@ -51,9 +68,13 @@
                 </a>
 
                 <a href="{{ route('mensagens.index') }}">
-                    <span class="material-symbols-outlined">mail_outline</span>
-                    <h3>Mensagens</h3>
-                    <span class="message-count">5</span>
+    <span class="material-symbols-outlined">mail_outline</span>
+    <h3>Mensagens</h3>
+    @if($contadorMensagens > 0)
+        <span class="message-count">{{ $contadorMensagens }}</span>
+    @endif
+</a>
+
                 </a>
                  <a href="{{ route('sobre') }}">
                     <span class="material-symbols-outlined">info</span>

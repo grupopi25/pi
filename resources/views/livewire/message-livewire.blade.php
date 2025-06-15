@@ -1,33 +1,34 @@
-<div class="message-container">
-    <h2 class="message-title">Mensagens</h2>
+<div class="chat">
+    <h2>Mensagens</h2>
 
-    <div class="message-box">
-        <section class="message-list">
-
-            @foreach($mensagens as $mensagem)
-                <div class="message">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>
-                                {{ $mensagem->remetente === 'adm' ? 'Clínica' : 'Você' }}
-                            </strong>
-                        </li>
-                    </ul>
-                    <p>{{ $mensagem->conteudo }}</p>
-                </div>
-            @endforeach
-
-
-            <div class="message">
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>Você</strong></li>
-                </ul>
-                <form wire:submit.prevent="enviarMensagemCliente" class="form-list">
-                    <input type="text" wire:model="novaMensagem" placeholder="Digite sua mensagem" required>
-                    <button type="submit">Enviar</button>
-                </form>
+    <div class="messages">
+        @foreach($mensagens as $mensagem)
+            <div
+                class="msg {{ $mensagem->remetente === 'cliente' ? 'msg-cliente' : 'msg-admin' }}"
+                @if($mensagem->remetente === 'adm')
+                    wire:click="selecionarMensagem({{ $mensagem->id }})"
+                    style="cursor: pointer"
+                @endif
+            >
+                <p>{{ $mensagem->conteudo }}</p>
+                <span class="hora">{{ $mensagem->created_at->format('H:i') }}</span>
             </div>
-
-        </section>
+        @endforeach
     </div>
+
+
+    <form wire:submit.prevent="enviarMensagemCliente" class="form-msg">
+        <input type="text" wire:model="novaMensagem" placeholder="Digite sua mensagem..." required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    
+    @if($mensagemSelecionadaId)
+        <div class="resposta">
+            <h4>Respondendo</h4>
+            <textarea wire:model="respostaMensagem" placeholder="Digite sua resposta..."></textarea>
+            <button wire:click="enviarResposta">Enviar</button>
+            <button wire:click="$set('mensagemSelecionadaId', null)">Cancelar</button>
+        </div>
+    @endif
 </div>
