@@ -16,7 +16,7 @@
             <div class="card">
                 <span class="material-symbols-outlined">event</span>
                 <div class="info">
-                    <h2>2</h2>
+                    <h2>{{ $consultas }}</h2>
                     <p>Agendamentos Ativos</p>
                 </div>
             </div>

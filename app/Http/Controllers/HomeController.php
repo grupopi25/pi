@@ -18,8 +18,9 @@ public function sobre(){
     return view('site.clientes.sobrenos');
 }
 public function dashboard(){
+    $consultas = Consulta::where('client_id',Auth::id())->get()->count();
       $meuPet = Pet::where('user_id',Auth::id())->count();
-    return view('site.clientes.dashboard-clente',compact('meuPet'));
+    return view('site.clientes.dashboard-clente',compact('meuPet', 'consultas'));
 
 }
 public function consulta(){

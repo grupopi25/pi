@@ -10,4 +10,16 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+
+    server: {
+        host: '0.0.0.0', // ou 'localhost'
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: 'www.pi.com.br',
+        },
+        cors: true,
+    },
+
 });
+

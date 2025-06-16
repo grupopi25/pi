@@ -16,7 +16,7 @@ class Consulta extends Model
         'user_id',
     ];
 
-  
+
     public function pet()
     {
         return $this->belongsTo(Pet::class);

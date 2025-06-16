@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     @vite(['resources/css/home/index.css', 'resources/js/app.js'])
-
+    @vite(['resources/js/script.js'])
     @vite(['resources/css/home/dashboard.css'])
     @vite(['resources/css/home/cadastrar-pet.css'])
     @vite(['resources/css/home/sobre.css'])

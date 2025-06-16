@@ -11,8 +11,8 @@ class MessageLivewire extends Component
     public $mensagens = [];
     public $novaMensagem;
 
-    public $mensagemSelecionadaId = null; // id da mensagem do adm selecionada para responder
-    public $respostaMensagem = ''; // campo para a resposta
+    public $mensagemSelecionadaId = null;
+    public $respostaMensagem = '';
 
     public function mount()
     {
