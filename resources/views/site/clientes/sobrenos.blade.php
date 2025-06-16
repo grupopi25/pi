@@ -7,7 +7,7 @@
 
     <div class="sobre-container">
         <div class="sobre-imagem">
-            <img src="" alt="Equipe ClinVet">
+            <img src="{{ asset('assets/logo-bonita.png') }}" alt="Equipe ClinVet">
         </div>
         <div class="sobre-texto">
             <h1 class="titulo-sobre">Sobre Nós - <span class="clinvet">ClinVet</span></h1>
