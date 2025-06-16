@@ -12,11 +12,35 @@ class MensagensAdm extends Component
     public $clientes;
     public $cliente_id;
     public $mensagem;
+    public $mensagens = [];
 
     public function mount()
     {
-        
         $this->clientes = Cliente::all();
+
+        // Recuperar cliente selecionado da sessão, se existir
+        $this->cliente_id = session('cliente_id');
+        if ($this->cliente_id) {
+            $this->carregarMensagens();
+        }
+    }
+
+    public function updatedClienteId()
+    {
+        // Salvar cliente selecionado na sessão
+        session(['cliente_id' => $this->cliente_id]);
+        $this->carregarMensagens();
+    }
+
+    public function carregarMensagens()
+    {
+        if ($this->cliente_id) {
+            $this->mensagens = Mensagem::where('cliente_id', $this->cliente_id)
+                ->orderBy('created_at', 'asc')
+                ->get();
+        } else {
+            $this->mensagens = [];
+        }
     }
 
     public function enviarMensagem()
@@ -26,14 +50,12 @@ class MensagensAdm extends Component
             'mensagem' => 'required|string|max:1000',
         ]);
 
-
         $adm = Auth::guard('adm')->user();
 
         if (!$adm) {
             session()->flash('error', 'Você precisa estar logado como administrador para enviar mensagens.');
             return;
         }
-
 
         Mensagem::create([
             'cliente_id' => $this->cliente_id,
@@ -42,9 +64,9 @@ class MensagensAdm extends Component
             'remetente'  => 'adm',
         ]);
 
-
-        $this->cliente_id = null;
         $this->mensagem = null;
+
+        $this->carregarMensagens();
 
         session()->flash('success', 'Mensagem enviada com sucesso!');
     }

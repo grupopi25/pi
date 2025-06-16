@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Adm;
 use App\Models\cliente;
+use App\Models\Consulta;
 use App\Models\Pet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,7 +93,11 @@ class AdiminController extends Controller
 
    public function service()
    {
-      return view('site/admin/servicos');
+    $consultas = Consulta::all();
+    $pets = Pet::all();
+    
+    return view('site/admin/servicos', compact('consultas', 'pets'));
+
    }
    public function mensage()
    {

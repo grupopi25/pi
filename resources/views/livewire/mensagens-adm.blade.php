@@ -17,7 +17,6 @@
 
     <div class="message-form-container">
 
-        {{-- Alertas --}}
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
@@ -46,5 +45,22 @@
 
             <button type="submit" class="btn-enviar">Enviar Mensagem</button>
         </form>
+
+
+        @if ($cliente_id)
+            <div class="mensagens-historico" style="margin-top: 2rem;">
+                <h3>Histórico de Mensagens</h3>
+
+                @forelse ($mensagens as $mensagem)
+                    <div class="mensagem-item" style="padding: 10px; margin-bottom: 10px; background: #f9f9f9; border-radius: 5px;">
+                        <strong>{{ $mensagem->remetente === 'adm' ? 'Admin' : 'Cliente' }}:</strong>
+                        <p>{{ $mensagem->conteudo }}</p>
+                        <small>{{ \Carbon\Carbon::parse($mensagem->created_at)->format('d/m/Y H:i') }}</small>
+                    </div>
+                @empty
+                    <p>Nenhuma mensagem ainda com este cliente.</p>
+                @endforelse
+            </div>
+        @endif
     </div>
 </div>

@@ -5,10 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    @vite(['resources/css/admin/adm.css', 'resources/js/script.js'])
+    @vite(['resources/css/admin/adm.css', 'resources/js/app.js'])
     @vite(['resources/css/admin/clientes.css', 'resources/js/script.js'])
     @vite(['resources/css/admin/mensagens.css'])
     @vite([ 'resources/js/animais.js'])
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
 
@@ -59,30 +60,7 @@
                     <h3>Serviços</h3>
                 </a>
 
-                <a href="#">
-                    <span class="material-icons-sharp">event</span>
-                    <h3>Agendamentos</h3>
-                </a>
 
-                <a href="#">
-                    <span class="material-icons-sharp">medical_services</span>
-                    <h3>Atendimentos</h3>
-                </a>
-
-                <a href="{{ route('adm.doctors') }}" class="{{ request()->routeIs('adm.doctors') ? 'active' : '' }}">
-                    <span class="material-icons-sharp">local_hospital</span>
-                    <h3>Veterinários</h3>
-                </a>
-
-                <a href="{{ route('adm.finance') }}" class="{{ request()->routeIs('adm.finance') ? 'active' : '' }}">
-                    <span class="material-icons-sharp">attach_money</span>
-                    <h3>Financeiro</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-icons-sharp">settings</span>
-                    <h3>Configurações</h3>
-                </a>
 
                 <a href="{{ route('logout') }}">
                     <span class="material-icons-sharp">logout</span>
@@ -96,7 +74,14 @@
 
     </div>
 
+<script>
+       function concluirConsulta(botao) {
+        botao.textContent = 'Concluído';
+        botao.style.backgroundColor = '#28a745';
+        botao.disabled = true; r
+    }
 
+</script>
 </body>
 
 </html>

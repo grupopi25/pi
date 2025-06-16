@@ -12,7 +12,8 @@ class HomeController extends Controller
 {
 public function home(){
         $meuPet = Pet::where('user_id',Auth::id())->count();
-    return view('site.clientes.dashboard-clente',compact('meuPet'));
+        $consultas = Consulta::where('client_id',Auth::id())->get()->count();
+    return view('site.clientes.dashboard-clente',compact('meuPet', 'consultas'));
 }
 public function sobre(){
     return view('site.clientes.sobrenos');

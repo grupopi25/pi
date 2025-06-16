@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+    @livewireStyles
     @vite(['resources/css/home/index.css', 'resources/js/app.js'])
     @vite(['resources/js/script.js'])
     @vite(['resources/css/home/dashboard.css'])
@@ -32,7 +32,7 @@ if (Auth::check()) {
         ->where('lida', false)
         ->count();
 }
-// No seu controller da rota mensagens.index
+
 
 
 @endphp
@@ -81,25 +81,7 @@ if (Auth::check()) {
                     <h3>Sobre</h3>
                 </a>
 
-                <a href="">
-                    <span class="material-symbols-outlined">construction</span>
-                    <h3>Serviços</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined">event</span>
-                    <h3>Agendamentos</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined">medical_services</span>
-                    <h3>Atendimentos</h3>
-                </a>
-
-                <a href="">
-                    <span class="material-symbols-outlined">attach_money</span>
-                    <h3>Situação</h3>
-                </a>
+                
 
 
 
@@ -115,7 +97,7 @@ if (Auth::check()) {
     </div>
 
     <script src="{{ asset('js/script.js') }}"></script>
-
+@livewireScripts
 </body>
 
 </html>
